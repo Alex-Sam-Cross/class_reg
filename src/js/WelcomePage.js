@@ -1,45 +1,31 @@
 import React from 'react';
-import Main from './Main';
-import Footer from './Footer.js';
 
-function MainPage(props) {
+function MainWelcome() {
   return (
-    <div className="bg-img">
-      <header>
-        <div className="menu-btn" onClick={props.menuClick}>
-          <div className="btn-line" />
-          <div className="btn-line" />
-          <div className="btn-line" />
-        </div>
-        <nav className="menu">
-          <div className="menu-branding">
-            <div className="portrait" />
-          </div>
-          <ul className="menu-nav">
-            <li className="nav-item current">
-              <div className="nav-link">Home</div>
-            </li>
-            <li className="nav-item" onClick={props.selectAbout}>
-              <div className="nav-link">About Rosemary High</div>
-            </li>
-            <li className="nav-item" onClick={props.selectCourses}>
-              <div className="nav-link">Courses</div>
-            </li>
-            <li className="nav-item">
-              <div className="nav-link">Registration</div>
-            </li>
-            <li className="nav-item">
-              <div href="src/contact.html" className="nav-link">
-                Contact Rosemary High
-              </div>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <Main />
-      <Footer />
-    </div>
+    <main id="welcome">
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossOrigin="anonymous"
+      />
+      <h1 className="main-heading">
+        Rosemary <span className="text_secondary">High</span>
+      </h1>
+      <h2 className="sub-heading">College</h2>
+      <div className="icons">
+        <a href="./">
+          <i className="fab fa-facebook fa-2x" />
+        </a>
+        <a href="./">
+          <i className="fab fa-linkedin fa-2x" />
+        </a>
+        <a href="https://github.com/Alex-Sam-Cross">
+          <i className="fab fa-github fa-2x" />
+        </a>
+      </div>
+    </main>
   );
 }
 
-export default MainPage;
+export default MainWelcome;
