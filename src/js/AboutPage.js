@@ -3,13 +3,17 @@ import React from 'react';
 function About() {
   return (
     <main id="about">
-      <h1 class="main-heading">
-        About <span class="text_secondary">Me</span>
+      <h1 className="main-heading">
+        About <span className="text_secondary">Rosemary High</span>
       </h1>
-      <h2 class="sub-heading">Let me tell you about a few things...</h2>
-      <div class="about-info">
-        <img src="./../img/portrait.jpg" alt="Sam Cross" class="bio-image" />
-        <div class="bio">
+      <h2 className="sub-heading">Let me tell you about a few things...</h2>
+      <div className="about-info">
+        <img
+          src="../img/graduation.jpg"
+          alt="Rosemary High"
+          className="bio-image"
+        />
+        <div className="bio">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Pellentesque ullamcorper finibus justo eu vehicula. Pellentesque
@@ -20,7 +24,7 @@ function About() {
             parturient montes, nascetur ridiculus mus.
           </p>
         </div>
-        <div class="job job-1">
+        <div className="section section-1">
           <h3>Something </h3>
           <h6>Something</h6>
           <p>
@@ -30,7 +34,7 @@ function About() {
             aliquam cursus augue, sed molestie eros hendrerit ut.
           </p>
         </div>
-        <div class="job job-2">
+        <div className="section section-2">
           <h3>Something</h3>
           <h6>Something</h6>
           <p>
@@ -40,7 +44,7 @@ function About() {
             tristique, lacinia erat ac, dictum lectus.
           </p>
         </div>
-        <div class="job job-3">
+        <div className="section section-3">
           <h3>Something</h3>
           <h6>Something</h6>
           <p>

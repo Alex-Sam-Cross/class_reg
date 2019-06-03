@@ -9,42 +9,74 @@ class App extends Component {
 
     this.state = {
       // set states
-      showMenu: false
+      showMenu: false,
+      currentPage: 'welcome'
     };
     //binds
     this.menuClick = this.menuClick.bind(this);
     this.selectWelcome = this.selectWelcome.bind(this);
     this.selectAbout = this.selectAbout.bind(this);
-    this.selectCourses = this.selectCourses.bind(this);
+    this.selectClasses = this.selectClasses.bind(this);
     this.selectRegistration = this.selectRegistration.bind(this);
     this.selectContact = this.selectContact.bind(this);
+    this.componentDidUpdate = this.componentDidUpdate.bind(this);
   }
 
   // methods
+  componentDidUpdate() {
+    // select DOM items
+    const welcome = document.getElementById('welcome');
+    const about = document.getElementById('about');
+    const classes = document.getElementById('classes');
+
+    if (this.state.currentPage === 'welcome') {
+      welcome.classList.add('show');
+      about.classList.remove('show');
+      classes.classList.remove('show');
+    } else if (this.state.currentPage === 'about') {
+      welcome.classList.remove('show');
+      about.classList.add('show');
+      classes.classList.remove('show');
+    } else if (this.state.currentPage === 'classes') {
+      welcome.classList.remove('show');
+      about.classList.remove('show');
+      classes.classList.add('show');
+    } else {
+    }
+  }
+
   menuClick() {
     closeMenu(this);
   }
   selectWelcome() {
     closeMenu(this);
-    document.getElementById('welcome').style.display = 'block';
-    document.getElementById('about').style.display = 'none';
+    this.setState({
+      currentPage: 'welcome'
+    });
   }
   selectAbout() {
     closeMenu(this);
-    document.getElementById('welcome').style.display = 'none';
-    document.getElementById('about').style.display = 'block';
+    this.setState({
+      currentPage: 'about'
+    });
   }
-  selectCourses(event) {
-    console.log(event);
-    console.log('click');
+  selectClasses() {
+    closeMenu(this);
+    this.setState({
+      currentPage: 'classes'
+    });
   }
   selectRegistration(event) {
-    console.log(event);
-    console.log('click');
+    closeMenu(this);
+    this.setState({
+      currentPage: 'registration'
+    });
   }
   selectContact(event) {
-    console.log(event);
-    console.log('click');
+    closeMenu(this);
+    this.setState({
+      currentPage: 'contact'
+    });
   }
   // render
   render() {
@@ -52,9 +84,12 @@ class App extends Component {
       <div>
         <MainPage
           menuClick={this.menuClick}
+          classList={this.state.classList}
+          onChange={this.inputHandler}
+          value={this.state.input}
           selectWelcome={this.selectWelcome}
           selectAbout={this.selectAbout}
-          selectCourses={this.selectCourses}
+          selectClasses={this.selectClasses}
           selectContact={this.selectContact}
         />
       </div>

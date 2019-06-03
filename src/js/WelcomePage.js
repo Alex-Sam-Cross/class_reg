@@ -2,7 +2,7 @@ import React from 'react';
 
 function MainWelcome() {
   return (
-    <main id="welcome">
+    <main id="welcome" className="welcome show">
       <link
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"

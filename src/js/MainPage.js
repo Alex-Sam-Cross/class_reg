@@ -1,6 +1,7 @@
 import React from 'react';
 import WelcomePage from './WelcomePage.js';
 import AboutPage from './AboutPage.js';
+import Classes from './Classes.js';
 import Footer from './Footer.js';
 
 function MainPage(props) {
@@ -23,8 +24,8 @@ function MainPage(props) {
             <li className="nav-item" onClick={props.selectAbout}>
               <div className="nav-link">About Rosemary High</div>
             </li>
-            <li className="nav-item" onClick={props.selectCourses}>
-              <div className="nav-link">Courses</div>
+            <li className="nav-item" onClick={props.selectClasses}>
+              <div className="nav-link">Classes</div>
             </li>
             <li className="nav-item">
               <div className="nav-link">Registration</div>
@@ -39,6 +40,11 @@ function MainPage(props) {
       </header>
       <WelcomePage />
       <AboutPage />
+      <Classes
+        classList={props.classList}
+        // onChange={props.inputHandler}
+        // value={props.input}
+      />
       <Footer />
     </div>
   );
